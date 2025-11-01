@@ -283,12 +283,7 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
-// Intersection Observer for animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-}
-
+// Intersection Observer for card fade-ins
 const elementObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -300,7 +295,7 @@ const elementObserver = new IntersectionObserver((entries) => {
 
 // Observe all cards and sections
 document
-  .querySelectorAll(".servicio-card, .nosotros-card, .portfolio-item, .benefit-card, .testimonial-card")
+  .querySelectorAll(".servicio-card, .about-card, .showcase-item, .signature-card, .benefit-card, .testimonial-card")
   .forEach((el) => {
     el.style.opacity = "0"
     el.style.transform = "translateY(20px)"
@@ -309,7 +304,7 @@ document
   })
 
 // Portfolio hover effect enhancement
-const portfolioItems = document.querySelectorAll(".portfolio-item")
+const portfolioItems = document.querySelectorAll(".showcase-item")
 portfolioItems.forEach((item) => {
   item.addEventListener("mouseenter", () => {
     console.log("[v0] Portfolio item hovered")
