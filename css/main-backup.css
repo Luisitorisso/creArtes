@@ -1,26 +1,18 @@
 ﻿/* ===== RESET Y VARIABLES ===== */
 :root {
-  /* Colores base */
-  --turquesa: #077a7a;
-  --turquesa-dark: #055555;
-  --turquesa-light: #099999;
-  --negro: #000000;
-  --blanco: #ffffff;
-  --gris-oscuro: #1a1a1a;
-  --gris-medio: #333333;
-  --gris-claro: #e0e0e0;
-  
-  /* Modo Dark (predeterminado) - Negro principal */
-  --primary-color: var(--turquesa);
-  --primary-dark: var(--turquesa-dark);
-  --primary-light: var(--turquesa-light);
-  --text-primary: var(--blanco);
-  --text-secondary: #e0e0e0;
-  --text-light: #a0a0a0;
-  --background: var(--negro);
-  --background-alt: var(--gris-oscuro);
-  --background-card: #0d0d0d;
-  --border-color: #2a2a2a;
+  /* Paleta: Negro, Blanco y Turquesa */
+  --primary-color: #077a7a;
+  --primary-dark: #055555;
+  --primary-light: #099999;
+  --secondary-color: #ffffff;
+  --accent-color: #0aa0a0;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-light: #666666;
+  --background: #ffffff;
+  --background-light: #f8f8f8;
+  --background-dark: #000000;
+  --border-color: #e0e0e0;
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
@@ -37,31 +29,14 @@
   --border-radius-lg: 12px;
   
   /* Sombras */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
-  
-  /* Transiciones */
-  --transition: all 0.3s ease;
-  --transition-fast: all 0.15s ease;
-}
-
-/* Modo Light */
-[data-theme="light"] {
-  --text-primary: var(--negro);
-  --text-secondary: var(--gris-medio);
-  --text-light: #666666;
-  --background: var(--blanco);
-  --background-alt: #f8f8f8;
-  --background-card: var(--blanco);
-  --border-color: var(--gris-claro);
-  
-  /* Sombras más suaves para light mode */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  
+  /* Transiciones */
+  --transition: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
 }
 
 * {
@@ -201,7 +176,7 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  background: var(--background-card);
+  background: var(--secondary-color);
   z-index: 1000;
   transition: var(--transition);
   border-bottom: 1px solid var(--border-color);
@@ -300,53 +275,6 @@ p {
 .nav-link-cta:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: 2px solid var(--border-color);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: var(--transition);
-  margin-left: 1rem;
-  position: relative;
-}
-
-.theme-toggle:hover {
-  border-color: var(--primary-color);
-  transform: rotate(20deg);
-}
-
-.theme-toggle svg {
-  position: absolute;
-  transition: var(--transition);
-  color: var(--text-primary);
-}
-
-.sun-icon {
-  opacity: 0;
-  transform: rotate(-90deg) scale(0);
-}
-
-.moon-icon {
-  opacity: 1;
-  transform: rotate(0) scale(1);
-}
-
-[data-theme="light"] .sun-icon {
-  opacity: 1;
-  transform: rotate(0) scale(1);
-}
-
-[data-theme="light"] .moon-icon {
-  opacity: 0;
-  transform: rotate(90deg) scale(0);
 }
 
 .nav-toggle {
@@ -519,7 +447,7 @@ section {
 }
 
 .servicio-card {
-  background: var(--background-card);
+  background: var(--secondary-color);
   padding: 2.5rem;
   border-radius: var(--border-radius);
   transition: var(--transition);
@@ -1484,43 +1412,37 @@ section {
   position: relative;
   padding: 2.25rem;
   border-radius: var(--border-radius-lg);
-  background: var(--background-card);
-  border: 2px solid var(--border-color);
-  box-shadow: var(--shadow-md);
+  background: rgba(7, 16, 36, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 25px 80px rgba(2, 6, 23, 0.55);
   overflow: hidden;
-  transition: var(--transition);
 }
 
 .about-card::before {
   content: '';
   position: absolute;
   inset: -40% -20% 60% -20%;
-  background: radial-gradient(circle, var(--primary-color), transparent 70%);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.4), transparent 70%);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
-.about-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-color);
-}
-
 .about-card:hover::before {
-  opacity: 0.15;
+  opacity: 0.45;
 }
 
 .about-card-label {
   font-size: 0.8rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: rgba(148, 163, 184, 0.65);
   display: block;
   margin-bottom: 0.75rem;
 }
 
 .about-card h3 {
   font-size: 1.5rem;
-  color: var(--text-primary);
+  color: #f8fafc;
   margin-bottom: 1rem;
 }
 
@@ -1935,16 +1857,5 @@ section {
   .signature-grid,
   .showcase-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .theme-toggle {
-    width: 36px;
-    height: 36px;
-    margin-left: 0.5rem;
-  }
-  
-  .theme-toggle svg {
-    width: 18px;
-    height: 18px;
   }
 }

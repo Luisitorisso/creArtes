@@ -1,3 +1,22 @@
+// ===== THEME TOGGLE =====
+// Initialize theme from localStorage or default to dark
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+// Check for saved theme preference or default to dark
+const currentTheme = localStorage.getItem('theme') || 'dark';
+htmlElement.setAttribute('data-theme', currentTheme);
+
+// Toggle theme function
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  htmlElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
+
+// ===== MOBILE NAVIGATION =====
 // Mobile Navigation Toggle
 const navToggle = document.getElementById("navToggle")
 const navMenu = document.getElementById("navMenu")

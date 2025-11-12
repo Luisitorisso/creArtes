@@ -9,22 +9,47 @@ El sitio está completamente personalizado con:
 - Misión, Visión y Valores de la empresa
 - 5 categorías de servicios reales
 - Diseño moderno y responsive
+- **🌓 Sistema Dark/Light Mode** con negro como protagonista
 
 ---
 
-## 📂 Estructura del Proyecto
+## 🌓 Nuevo: Sistema de Temas
+
+### 🌙 Modo Dark (Predeterminado)
+- Fondo negro (#000000) - Color principal del cliente
+- Texto blanco brillante
+- Cards en gris oscuro elegante
+- Perfecto para impresionar con modernidad
+
+### ☀️ Modo Light
+- Fondo blanco limpio
+- Texto negro nítido
+- Cards en blanco puro
+- Ideal para legibilidad máxima
+
+**Cambio instantáneo** con botón en header (esquina superior derecha)  
+**Preferencia guardada** automáticamente
+
+� **Documentación completa**: Ver `TEMA_DARK_LIGHT.md`
+
+---
+
+## �📂 Estructura del Proyecto
 
 ```
 creArtes/
-├── index.html                    # Archivo HTML principal
+├── index.html                      # Archivo HTML principal
 ├── css/
-│   └── main.css                 # Estilos CSS (1144+ líneas)
+│   ├── main.css                   # Estilos CSS con sistema dark/light
+│   └── main-backup.css            # Backup del diseño anterior
 ├── js/
-│   └── main.js                  # JavaScript interactivo (250+ líneas)
+│   └── main.js                    # JavaScript + Toggle de tema
 ├── assets/
-│   └── logo-creartes.svg        # Logo SVG de Studio CreArtes
-├── CAMBIOS_IMPLEMENTADOS.md     # Detalle de cambios realizados
-└── README.md                    # Este archivo
+│   └── logo-creartes.svg          # Logo SVG de Studio CreArtes
+├── TEMA_DARK_LIGHT.md             # 🆕 Documentación del sistema de temas
+├── LEEME_DARK_LIGHT.md            # 🆕 Guía simple para el cliente
+├── CAMBIOS_IMPLEMENTADOS.md       # Detalle de cambios anteriores
+└── README.md                      # Este archivo
 ```
 
 ---
